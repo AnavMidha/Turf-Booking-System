@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login – Book My Turf</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-box">
+
+        <h2 style="color: black;">Welcome Back</h2>
+
+        <!-- Messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: yellow; margin-bottom: 10px;">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Login Form -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <!-- Back to Home -->
+        <a href="{% url 'home' %}" class="back-home">
+            ← Back to Home
+        </a>
+
+        <!-- Switch to signup -->
+        <p class="switch-text">
+            Don’t have an account?
+            <a href="{% url 'signup' %}">Sign up</a>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>
