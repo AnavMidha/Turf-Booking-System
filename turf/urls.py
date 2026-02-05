@@ -17,13 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import homepage
-from register import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage.home,name='home'),
+    
 
     #register app urls
     path('', include('register.urls')),
+
+
+    #dashboard app urls 
+    path('',include('dashboard.urls')),
+
+
+    
     
 ]

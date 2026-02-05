@@ -42,9 +42,11 @@ def login_view(request):
         if user is not None:
             login(request,user)
             messages.success(request,"Logged in successfully")   
-            return redirect("home")
+            return redirect("dashboard")
         else:
             messages.error(request,"Invalid email or password")
     
     return render(request,"login.html")
 
+def dashboard(request):
+    return render(request,"dashboard.html") 
