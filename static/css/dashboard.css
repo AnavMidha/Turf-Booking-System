@@ -1,5 +1,4 @@
 /* ================= RESET ================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -7,227 +6,142 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-
-/* ================= BODY ================= */
-
-body {
-    background-image: url("/static/images/field.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
-    /* dark overlay effect */
-    position: relative;
-}
-
-/* dark overlay so bg is not too bright */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 25, 35, 0.65);
-    z-index: -1;
-}
-
-
 /* ================= NAVBAR ================= */
-
 .navbar {
-    position: sticky;
+    position: absolute;
     top: 0;
-
-    height: 70px;
     width: 100%;
+    height: 70px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 50px;
-
-    background: rgba(20, 28, 36, 0.95);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0 60px;
+    .navbar {
+    background: rgba(20, 28, 40, 0.85);
+    backdrop-filter: blur(8px);
+}
+    z-index: 1000;
 }
 
 .logo {
-    text-decoration: none;
     font-size: 22px;
     font-weight: 600;
     color: white;
 }
 
-.nav-menu {
+/* NAV LINKS */
+.nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
-    gap: 35px;
+    gap: 30px;
 }
 
-.nav-menu li {
+.nav-links li {
     position: relative;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: #d7dde4;
-    font-size: 15px;
-    transition: 0.2s;
-    font-weight: 500;
+.nav-links a {
+    color: #dbe3ea;
 }
 
-.nav-menu a:hover {
+.nav-links a:hover {
     color: white;
 }
 
 
-/* ================= DROPDOWN ================= */
 
-.dropdown-menu {
-    display: none;
+/* ================= HERO SECTION ================= */
+.hero {
+    height: 100vh;
+    background-image: url("/static/images/dashboard.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Dark overlay */
+.hero::before {
+    content: "";
     position: absolute;
-    top: 40px;
-    left: 0;
-
-    background: #1f2a36;
-    list-style: none;
-
-    min-width: 170px;
-    border-radius: 6px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    inset: 0;
+    background: rgba(0,0,0,0.5);
 }
-
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 15px;
-    color: #d7dde4;
-}
-
-.dropdown-menu li a:hover {
-    background: #2b3948;
-    color: white;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-
-/* ================= DASHBOARD LAYOUT ================= */
-
-.dashboard-container {
-    min-height: calc(100vh - 70px);
-
-    padding: 60px 80px 40px 80px;
-
-    display: flex;
-    flex-direction: column;
-}
-
 
 /* ================= BOOKINGS SECTION ================= */
-
 .bookings-section {
-    width: 360px;
-    margin-left: 40px;
-    margin-top: 120px;
+    position: absolute;
+    top: 44%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 2;
 }
 
 .bookings-section h2 {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 20px;
-    color: white;
 }
 
-.no-bookings {
-    background: rgba(255,255,255,0.08);
-    padding: 30px;
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(4px);
+.booking-card {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
 }
 
-.no-bookings p {
+.booking-card p {
     margin-bottom: 15px;
-    color: #d0d7df;
 }
 
-
-/* ================= BUTTONS ================= */
-
-.primary-btn,
-.search-btn {
-    padding: 12px 22px;
+/* ================= BUTTON ================= */
+.primary-btn {
+    padding: 10px 18px;
     border: none;
-    border-radius: 8px;
-
-    background: #1f8fff;
+    background: #ff4d4d;
     color: white;
-    font-weight: 500;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.primary-btn:hover,
-.search-btn:hover {
-    background: #1677d8;
+.primary-btn:hover {
+    background: #e63e3e;
 }
 
+/* ================= SEARCH BOX ================= */
+.search-box {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
 
-/* ================= SEARCH SECTION ================= */
-
-.search-section {
-    margin-top: auto;
-    margin-bottom: 70px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    width: 70%;
-    max-width: 900px;
-
-    background: rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 30px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(6px);
-}
-
-.search-section h3 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: white;
-    text-align: center;
-}
-
-
-/* ================= FORM ================= */
-
-.search-form {
+    background: rgba(255,255,255,0.15) ;
+    padding: 20px;
+    border-radius: 12px;
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 2;
 }
 
-.search-form input,
-.search-form select {
-    padding: 12px;
-    border-radius: 8px;
+.search-box select,
+.search-box input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    min-width: 140px;
+}
 
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.1);
+.search-box button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d4d;
     color: white;
-
-    min-width: 160px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.search-form input::placeholder {
-    color: #cfd6dd;
-}
-
-.search-form input:focus,
-.search-form select:focus {
-    outline: none;
-    border-color: #1f8fff;
+.search-box button:hover {
+    background: #e63e3e;
 }

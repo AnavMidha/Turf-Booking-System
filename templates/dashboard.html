@@ -1,114 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard | Book My Turf</title>
-
-    <!-- Common styles -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <!-- Dashboard specific styles -->
+    <title>Dashboard - Book My Turf</title>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
-
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar">
+    <div class="logo">Book My Turf</div>
 
-    <div class="nav-left">
-        <a href="#" class="logo">Book My Turf</a>
-    </div>
-
-    <ul class="nav-menu">
-
+    <ul class="nav-links">
         <li><a href="#">Home</a></li>
 
-        <li class="dropdown">
-            <a href="#">Sports</a>
-
-            <ul class="dropdown-menu">
-                <li><a href="#">Football</a></li>
-                <li><a href="#">Cricket</a></li>
-                <li><a href="#">Tennis</a></li>
-                <li><a href="#">Badminton</a></li>
-                <li><a href="#">Pickleball</a></li>
-            </ul>
-        </li>
+        <li><a href="#">Sports</a></li>
 
         <li><a href="#">Terms and Conditions</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Contact</a></li>
         <li><a href="#">Profile</a></li>
-
     </ul>
-
 </nav>
-    <!-- ===== MAIN DASHBOARD ===== -->
-    <div class="dashboard-container">
 
-        <!-- LEFT SECTION -->
-        <div class="bookings-section">
-            <h2>My Bookings</h2>
 
-            <!-- If no bookings -->
-            <div class="no-bookings">
-                <p>You have no bookings yet.</p>
-                <button class="primary-btn">Make a Booking</button>
-            </div>
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
 
-            <!-- Later you will loop bookings here -->
-            <!--
-            {% for booking in bookings %}
-                <div class="booking-card">
-                    {{ booking.sport }} - {{ booking.date }}
-                </div>
-            {% endfor %}
-            -->
+    <!-- MY BOOKINGS (center-left) -->
+    <div class="bookings-section">
+        <h2>My Bookings</h2>
+
+        <div class="booking-card">
+            <p>You have no bookings yet.</p>
+            <button class="primary-btn">Make a Booking</button>
         </div>
-
-
-        <!-- SEARCH SECTION -->
-        <div class="search-section">
-
-            <h3>Find a Turf</h3>
-
-            <form class="search-form" method="GET">
-
-                <!-- Sport -->
-                <select name="sport">
-                    <option value="">Select Sport</option>
-                    <option>Football</option>
-                    <option>Cricket</option>
-                    <option>Tennis</option>
-                    <option>Badminton</option>
-                    <option>Pickleball</option>
-                </select>
-
-                <!-- Date -->
-                <input type="date" name="date">
-
-                <!-- Time -->
-                <select name="time">
-                    <option value="">Select Time</option>
-                    <option>6 AM - 7 AM</option>
-                    <option>7 AM - 8 AM</option>
-                    <option>8 AM - 9 AM</option>
-                    <option>9 AM - 10 AM</option>
-                </select>
-
-                <!-- Location -->
-                <input type="text" name="location" placeholder="Enter Location">
-
-                <button type="submit" class="search-btn">
-                    Search
-                </button>
-
-            </form>
-
-        </div>
-
     </div>
+
+
+    <!-- SEARCH BAR (bottom center) -->
+    <div class="search-box">
+        <select>
+            <option>Sport</option>
+            <option>Football</option>
+            <option>Cricket</option>
+            <option>Badminton</option>
+        </select>
+
+        <input type="date">
+
+        <select>
+            <option>Time</option>
+            <option>8 AM - 9 AM</option>
+            <option>9 AM - 10 AM</option>
+        </select>
+
+        <input type="text" placeholder="Location">
+
+        <button>Search</button>
+    </div>
+
+</section>
 
 </body>
 </html>
