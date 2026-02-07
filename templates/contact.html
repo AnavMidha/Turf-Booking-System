@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Book My Turf</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="contact-hero">
+    <div class="hero-overlay">
+        <h1>Contact Us</h1>
+    </div>
+</section>
+
+
+<!-- ================= CONTACT INFO SECTION ================= -->
+
+<section class="contact-info-section">
+
+    <div class="contact-info-container">
+
+        <!-- Left Map -->
+        <div class="map-box">
+            <iframe 
+                src="https://www.google.com/maps?q=Mumbai,India&output=embed"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Right Info -->
+        <div class="contact-details">
+            <h2>Get in Touch</h2>
+            <p>Have questions about bookings or turfs? We’re here to help.</p>
+
+            <div class="info-item">
+                <strong>Address:</strong>
+                <p>Mumbai, Maharashtra, India</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Phone:</strong>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Email:</strong>
+                <p>support@bookmyturf.com</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MESSAGE SECTION ================= -->
+
+<section class="message-section">
+
+    <div class="message-container">
+
+        <h3>Contact With Us</h3>
+        <h2>Write a Message</h2>
+
+        <form class="contact-form">
+
+            <div class="form-row">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+
+            <div class="form-row">
+                <input type="text" placeholder="Phone">
+                <input type="text" placeholder="Subject">
+            </div>
+
+            <textarea placeholder="Write a message"></textarea>
+
+            <button type="submit" class="submit-btn">
+                SEND A MESSAGE
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>Book My Turf</h3>
+            <p>Your one-stop platform for booking premium sports turfs.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li>About</li>
+                <li>Sports</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Mumbai, India</p>
+            <p>support@bookmyturf.com</p>
+            <p>+91 98765 43210</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Book My Turf
+    </div>
+</footer>
+
+</body>
+</html>

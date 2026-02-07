@@ -32,6 +32,7 @@ urlpatterns = [
     path('',include('dashboard.urls')),
 
 
-    
+    #contact app urls
+    path('', include('contact.urls')),
     
 ]
