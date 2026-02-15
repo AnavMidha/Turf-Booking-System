@@ -31,8 +31,8 @@ urlpatterns = [
     #dashboard app urls 
     path('',include('dashboard.urls')),
 
-
     #contact app urls
-    path('', include('contact.urls')),
+    path('',include('contact.urls'))
+   
     
 ]
