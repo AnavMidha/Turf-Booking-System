@@ -32,7 +32,10 @@ urlpatterns = [
     path('',include('dashboard.urls')),
 
     #contact app urls
-    path('',include('contact.urls'))
+    path('',include('contact.urls')),
+
+    #tnc app urls
+    path('',include('tnc.urls')),
    
     
 ]

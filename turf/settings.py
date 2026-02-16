@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'register',
     'dashboard',
     'contact',
+    'tnc',
     
 ]
 
