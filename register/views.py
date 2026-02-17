@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from .models import Profile
 
 def signup(request):
     if request.method=="POST":
@@ -10,6 +11,8 @@ def signup(request):
         email=request.POST.get("email")
         password=request.POST.get("password")
         confirm_password=request.POST.get("confirm_password")
+        address=request.POST.get("address")
+        
 
         if password != confirm_password:
             messages.error(request,"passwords do not match")
@@ -23,9 +26,20 @@ def signup(request):
             username=email,
             email=email,
             password=password,
+            
+            
+
         )
         user.first_name=name
         user.save()
+
+        Profile.objects.create(
+            user=user,
+            phone=phone_number,
+            address=address
+        
+
+        )
 
         messages.success(request,"Account created successfully.Please login")
         return redirect("login")

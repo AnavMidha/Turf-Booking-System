@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - Book My Turf</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR (Same as Dashboard) -->
+<nav class="navbar">
+    <div class="logo">Book My Turf</div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'dashboard' %}">Home</a></li>
+
+        <li><a href="#">Sports</a></li>
+
+        <li><a href="{% url 'tnc' %}">Terms and Conditions</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="profile-wrapper">
+
+        <div class="profile-header">
+            <h2>My Profile</h2>
+            <h1>{{ user_obj.first_name }}</h1>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="tabs">
+                <button class="active">Account Details</button>
+                <button>Bookings</button>
+            </div>
+
+            <div class="profile-form">
+
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" value="{{ user_obj.first_name }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" value="{{ user_obj.email }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Phone</label>
+                    <input type="text" value="{{ profile.phone }}">
+                </div>
+
+                <div class="input-group">
+                    <label>Address</label>
+                    <input type="text" value="{{ profile.address }}">
+                </div>
+
+                <div class="password-section">
+                    <div class="input-group full">
+                        <label>Password</label>
+                        <input type="password" value="{{ user_obj.password }}">
+                    </div>
+
+                    <button class="secondary-btn">Change Password</button>
+                </div>
+
+                <div class="save-section">
+                    <button class="primary-btn">Save Changes</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

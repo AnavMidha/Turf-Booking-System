@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dashboard',
     'contact',
     'tnc',
+    'my_profile',
     
 ]
 

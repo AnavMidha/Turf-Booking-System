@@ -46,10 +46,12 @@
 }
 
 .nav-links a {
+    text-decoration: none;   /* removes underline */
     color: #dbe3ea;
 }
 
 .nav-links a:hover {
+    text-decoration: none;   /* make sure hover doesn't add it back */
     color: white;
 }
 /* HERO */

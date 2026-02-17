@@ -36,6 +36,9 @@ urlpatterns = [
 
     #tnc app urls
     path('',include('tnc.urls')),
+
+    #my_profile app urls
+    path('',include('my_profile.urls'))
    
     
 ]
